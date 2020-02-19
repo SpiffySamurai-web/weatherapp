@@ -1,0 +1,33 @@
+#pages .page {
+    display: none;
+    text-align: center;
+}
+
+#pages .page:first-child {
+    display: block;
+}
+
+body {
+    background-image: url("images/blur-cars-dew-drops-125510.jpg");
+}
+
+.page{
+    color: white;
+    padding-top: 2%;
+    font-size: larger;
+}
+
+.weatherdesc{
+    background-color: teal;
+    opacity: 0.8;
+    color: white;
+}
+
+.weatherdesc h4{
+    padding: 1% 10% 1% 25%;
+}
+
+.weatherlist .row{
+    display: flex;
+ 
+}
