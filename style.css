@@ -1,3 +1,14 @@
+
+body {
+    background-color: darkblue;
+    overflow-x: hidden;
+}
+
+.page{
+    color: white;
+    font-size: larger;
+}
+
 #pages .page {
     display: none;
     text-align: center;
@@ -5,16 +16,6 @@
 
 #pages .page:first-child {
     display: block;
-}
-
-body {
-    background-image: url("images/blur-cars-dew-drops-125510.jpg");
-}
-
-.page{
-    color: white;
-    padding-top: 2%;
-    font-size: larger;
 }
 
 .weatherdesc{

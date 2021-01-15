@@ -1,4 +1,5 @@
 // Navbar
+let weatherlist = document.getElementById("weatherlist");
 let navService = {
     navItems: document.getElementsByClassName("nav-item"),
     navSearch: document.getElementById("citySearchInput"),
@@ -24,23 +25,18 @@ let navService = {
             })
         }
         this.searchBtn.addEventListener("click", function(e){
+            weatherlist.innerHTML = ""
             e.preventDefault();
             weatherService.city = navService.navSearch.value;
             console.log(weatherService.city)
-            weatherService.getData();
-            
+            weatherService.getData();            
         })
         
     }
 }
 // Navbar
 
-let 
 let avgTempDisplay = document.getElementById("average-temp")
-
-
-
-
 
 let weatherService = {
     apiKey: "025bfaaf5e5a20e0ead9087d88282bec",
@@ -53,8 +49,7 @@ let weatherService = {
                 console.log('The request succeeded!');
                 console.log(response);
                 getMaxStatistics(response);
-                weatherlistdisplay(response)
-                
+                weatherlistdisplay(response)                
             }, 
             error: function(response){
                 console.log('The request failed!');
@@ -75,17 +70,8 @@ function getMaxStatistics(response){
     console.log(`The MAX is ${maxTemp}`);
 }
 
-
-
-
-
-
-
-
-
 function weatherlistdisplay(response){
     console.log(response)
-    let weatherlist = document.getElementById("weatherlist");
     let hours = response.list;
     
     
@@ -93,8 +79,7 @@ function weatherlistdisplay(response){
         //  let hours = response.list;
 
         weatherlist.innerHTML +=
-       `
-       
+       `      
             <div class = "row">
 
             <div class="col-md-2"><img src="http://openweathermap.org/img/w/${hour.weather[0].icon}.png"</img></div>
@@ -104,8 +89,7 @@ function weatherlistdisplay(response){
             <div class="col-md-2"><h4>${hour.main.humidity}</h4></div>
             <div class="col-md-2"><h4>${hour.wind.speed}</h4></div> 
 
-            </div>
-       
+            </div>       
         `
     }
 }
